@@ -45,7 +45,7 @@ const Layout = ({ children }) => (
         <Flex>{children}</Flex>
         <Flex>
           <Box bg="primary" p={2} color="text" width={1 / 1}>
-            Build by Andrew Larcombe using GatsbyJS and using data from
+            Build by <a href="https://www.andrewl.net">Andrew Larcombe</a> using <a href="https://www.gatsbyjs.com">Gatsby</a> and using data from
             OpenStreetMap, images from wikimedia and maps from MapBox
           </Box>
         </Flex>
