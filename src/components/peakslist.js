@@ -28,7 +28,6 @@ class PeaksList extends React.Component {
   }
 
   setActivePeak(peak_idx) {
-    console.log("Setting active peak to " + peak_idx)
     this.setState({ activePeak: peak_idx })
     if (this.props.updateMapPositionCallback) {
       this.props.updateMapPositionCallback([

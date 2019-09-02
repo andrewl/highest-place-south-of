@@ -19,8 +19,6 @@ class PeaksAndMap extends React.Component {
   }
 
   updateMapPosition(position) {
-    console.log("Updating map position to")
-    console.log(position)
     this.setState({ position: position })
   }
 
