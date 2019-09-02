@@ -12,6 +12,7 @@ class Peak extends React.Component {
     description: PropTypes.string,
     image: PropTypes.string,
     next: PropTypes.string,
+    prev: PropTypes.string,
     elevation: PropTypes.string,
     wikidata: PropTypes.string,
     nextPeakCallback: PropTypes.func,
@@ -19,12 +20,13 @@ class Peak extends React.Component {
   }
 
   static defaultProps = {
-    position: [51, -1],
-    name: "name",
-    description: "blah",
+    position: [0, 0],
+    name: "",
+    description: "",
     image: "",
     elevation: 0,
-    next: "aa",
+    next: "",
+    prev: "",
     wikidata: null,
     nextPeakCallback: null,
     prevPeakCallback: null,
@@ -50,22 +52,19 @@ class Peak extends React.Component {
           At {this.props.elevation}m {this.props.name} is the highest point in
           the UK{next_peak}
         </Text>
-        <Box p={2} mr={2}>
-          <Button
-            disabled={!this.props.prevPeakCallback}
-            onClick={this.props.prevPeakCallback}
-          >
-            Previous
-          </Button>
-          <Button
-            ml={2}
-            disabled={!this.props.nextPeakCallback}
-            onClick={this.props.nextPeakCallback}
-          >
-            Next
-          </Button>
-        </Box>
         <Wikidata id={this.props.wikidata} />
+        <Box p={2}>
+          {this.props.prev && (
+            <Button width="100%" mb={2} onClick={this.props.prevPeakCallback}>
+              Previous: {this.props.prev}
+            </Button>
+          )}
+          {this.props.next && (
+            <Button width="100%" onClick={this.props.nextPeakCallback}>
+              Next: {this.props.next}
+            </Button>
+          )}
+        </Box>
       </Box>
     )
   }

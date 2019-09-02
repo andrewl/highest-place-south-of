@@ -42,8 +42,13 @@ class PeaksList extends React.Component {
     var peak = this.props.peaks[this.state.activePeak]
     var next_peak_name = ""
     var next_peak_callback = null
-    var prev_peak_callback =
-      this.state.activePeak == 0 ? null : this.prevPeak.bind(this)
+    var prev_peak_name = ""
+    var prev_peak_callback = null
+    if (this.state.activePeak > 0) {
+      prev_peak_name = this.props.peaks[this.state.activePeak - 1].featureFields
+        .name
+      prev_peak_callback = this.prevPeak.bind(this)
+    }
     if (this.state.activePeak + 1 < this.props.peaks.length) {
       next_peak_name = this.props.peaks[this.state.activePeak + 1].featureFields
         .name
@@ -57,6 +62,7 @@ class PeaksList extends React.Component {
         wikidata={peak.featureFields.wikidata}
         position={[peak.geometry.envelope.minY, peak.geometry.envelope.minX]}
         next={next_peak_name}
+        prev={prev_peak_name}
         nextPeakCallback={next_peak_callback}
         prevPeakCallback={prev_peak_callback}
       />

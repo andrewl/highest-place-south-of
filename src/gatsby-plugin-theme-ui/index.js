@@ -18,6 +18,7 @@ export default {
     body: 1.5,
     heading: 1.125,
   },
+  breakpoints: ["40em", "52em", "64em"],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 }

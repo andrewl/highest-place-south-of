@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Box, Heading, Text, Button, Image } from "rebass"
+import { Box, Card, Heading, Text, Button, Image } from "rebass"
 import md5 from "md5"
 const axios = require("axios")
 
@@ -72,8 +72,8 @@ class Wikidata extends React.Component {
       wikidata_image
 
     return (
-      <Box>
-        <Image alignContent='center' src={url} />
+      <Box w="100%" sx={{ "text-align": "center" }}>
+        <Image src={url} />
       </Box>
     )
   }
