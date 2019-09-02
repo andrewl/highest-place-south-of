@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: `highest-point-south-of`,
+  pathPrefix: `/highest-place-south-of`,
   siteMetadata: {
-    title: `Highest point south of`,
-    description: `highest point south of`,
+    title: `Highest place south of`,
+    description: `highest place south of`,
     author: `@andrewl`,
   },
   plugins: [
